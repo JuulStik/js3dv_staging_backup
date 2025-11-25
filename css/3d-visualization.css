@@ -1,0 +1,1474 @@
+:root {
+  --main-fill-gradient: linear-gradient(
+    90deg,
+    rgba(255, 138, 79, 1) 0%,
+    rgba(255, 31, 139, 1) 100%
+  );
+  --main-pink-fill: rgb(255, 31, 139);
+  --main-orange-fill: rgb(255, 138, 79);
+  --main-font-family: "Roboto", sans-serif;
+  --main-website-color: #ea028b;
+  --secondary-website-color: #151726;
+}
+
+* {
+  /* background-color: black; */
+  margin: 0;
+  padding: 0;
+}
+
+/* .container
+  > .wpb-content-wrapper
+  > .vc_row
+  > .wpb_column
+  > .vc_column-inner
+  > .wpb_wrapper
+  > .wpb_raw_code
+  > .wpb_wrapper
+  > .js3dv-main-container {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.vc_column-inner {
+  margin: 0 !important;
+  padding: 0 !important;
+} */
+
+.js3dv-main-container * {
+  /* all: unset; */
+  box-sizing: border-box;
+  color: white;
+  margin: 0;
+}
+
+.js3dv-main-container {
+  width: 100% !important;
+  height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: black;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 743px) {
+  .js3dv-main-container {
+    height: auto;
+  }
+}
+
+/******** GENERAL STYLES  *******/
+
+.js3dv-backarrow-button {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  background-color: transparent;
+  width: 30px;
+  border: none;
+  transition: translate 1s ease;
+}
+
+.js3dv-backarrow-button:hover {
+  translate: -10px;
+}
+
+.js3dv-utils-popup-container {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  color: white;
+  background: rgba(234, 2, 139, 0.9);
+}
+
+.js3dv-utils-popup-text {
+  text-align: center;
+}
+
+.js3dv-warning-popup-container {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.4);
+  z-index: 10000;
+}
+
+.js3dv-warning-popup-info-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 50%;
+  height: auto;
+  background-color: white;
+  border: black 2px solid;
+  padding: 40px;
+  gap: 20px;
+}
+
+.js3dv-warning-popup-info-header {
+  color: red;
+}
+
+.js3dv-warning-popup-info-text {
+  color: black;
+}
+
+.js3dv-warning-popup-info-button-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.js3dv-warning-popup-info-button {
+  width: 40%;
+  height: 30px;
+  color: white;
+  background-color: var(--main-website-color);
+  outline: none;
+  border: 1px solid black;
+  transition: background-color 0.5s ease;
+}
+
+.js3dv-warning-popup-info-button:hover {
+  background-color: var(--secondary-website-color);
+}
+
+/******** SELECTION FLOW ********/
+
+/* shape selection */
+
+.js3dv-select-shape-main-container {
+  position: relative;
+  width: 98%;
+  height: 98%;
+  max-height: 98%;
+  display: flex;
+  background-color: black;
+  padding: 10px;
+  flex-direction: column;
+}
+
+.js3dv-select-shape-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  border: 2px solid white;
+}
+
+.js3dv-select-info-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+  border-right: 2px solid white;
+}
+
+.js3dv-select-info-visual-container {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 2px solid white; */
+}
+
+.js3dv-select-info-header-container {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+}
+
+.js3dv-select-shape-header {
+  color: white;
+  height: 100px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--main-font-family);
+  font-size: x-large;
+  margin: 0;
+}
+
+.js3dv-shape-buttons-container {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.js3dv-select-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  flex-direction: column;
+  width: 18vw;
+  height: 18vw;
+  background: var(--main-website-color);
+  border: 1px solid white;
+  /* border-radius: 0px; */
+  box-shadow: 2px 2px 10px grey;
+  background-size: 100% 100%;
+  transition: background-color 0.5s ease;
+  color: white;
+}
+
+.js3dv-select-button img {
+  width: 8vw;
+}
+
+.js3dv-select-button p {
+  font-size: 12px;
+}
+
+.js3dv-select-button:hover {
+  background-size: 400% 100%;
+  background-color: var(--secondary-website-color);
+}
+
+.js3dv-select-button:focus {
+  background-size: 400% 100%;
+  background-color: var(--secondary-website-color);
+}
+
+.js3dv-select6hoek-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  flex-direction: column;
+  width: 200px;
+  height: 200px;
+  background: var(--main-fill-gradient);
+  border: 2px solid white;
+  border-radius: 20px;
+  box-shadow: 1px 1px 10px grey;
+  background-size: 100% 100%;
+  transition: background-size 0.5s ease;
+}
+
+.js3dv-select6hoek-button:hover {
+  background-size: 400% 100%;
+}
+
+.js3dv-select6hoek-button:focus {
+  background-size: 400% 100%;
+}
+
+@media (max-width: 743px) {
+  .js3dv-select-shape-main-container {
+    width: auto;
+  }
+
+  .js3dv-select-shape-container {
+    width: auto;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    border: 2px solid white;
+    gap: 5px;
+    padding: 5px;
+  }
+
+  .js3dv-select-info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .js3dv-select-info-header-container {
+    width: 100%;
+    height: auto;
+    padding-bottom: 50px;
+  }
+
+  .js3dv-select-button {
+    gap: 10px;
+    flex-direction: row;
+    width: auto;
+    height: 80px;
+    justify-content: space-between;
+    padding: 0px 10px;
+  }
+
+  .js3dv-selectstereo-image {
+    width: 40px;
+  }
+
+  .js3dv-select-info-visual-container {
+    width: 100%;
+    height: 300px;
+  }
+
+  .js3dv-selectstereo-text {
+    text-align: end;
+  }
+
+  .js3dv-warning-popup-info-container {
+    width: 90%;
+  }
+}
+
+/********* VISUALS CONTAINER ***********/
+
+.js3dv-selectDevice-back-button {
+  position: absolute;
+  display: flex;
+  width: 20%;
+  height: 25px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--main-website-color);
+  top: 10px;
+  left: 40%;
+  color: white;
+  z-index: 1000;
+  border: 1px solid white;
+  outline: none;
+  transition: background-color 0.5s ease;
+  font-size: 12px;
+}
+
+.js3dv-selectDevice-back-button:hover {
+  background-color: var(--secondary-website-color);
+}
+
+.js3dv-main-content-container {
+  position: relative;
+  width: 98%;
+  height: 98%;
+  max-height: 98%;
+  display: flex;
+  background-color: black;
+  padding: 10px;
+  /* box-shadow: inset 2px 2px 10px rgb(65, 65, 65); */
+}
+
+.js3dv-visuals-container {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  position: relative;
+}
+
+/* 3d visuals */
+
+.js3dv-3dvisuals-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 55%;
+  background-color: black;
+  border-top-left-radius: inherit;
+  border-top: 1px solid white;
+}
+
+/* zoom buttons */
+.js3dv-zoom-container {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: auto;
+  /* box-shadow: 2px 2px 10px grey; */
+  z-index: 100;
+}
+
+.js3dv-zoom-button {
+  width: 30px;
+  height: 30px;
+  border: none;
+  outline: none;
+  border-left: 1px solid white;
+  transition: all 1s ease;
+  font-size: larger;
+  background-color: var(--main-website-color);
+  color: white;
+}
+
+.js3dv-zoom-button:hover {
+  background-color: white;
+  color: black;
+}
+
+/* 2d measurements */
+
+.js3dv-measurement-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 20px;
+}
+
+/* buttons container */
+
+.js3dv-buttons-container {
+  width: 50px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.js3dv-leftbutton-button {
+  width: 100%;
+  height: 50%;
+  background-color: var(--main-website-color);
+  color: white;
+  writing-mode: vertical-lr;
+  /* box-shadow: 0 5px 10px grey; */
+  border: none;
+  z-index: 1;
+  transition: background-color 1s ease;
+  font-size: 12px;
+}
+
+.js3dv-leftbutton-button:hover {
+  background-color: white;
+  color: black;
+}
+
+.js3dv-leftbutton-button:focus {
+  background-color: white;
+  color: black;
+  outline: none;
+}
+
+.js3dv-rightbutton-button {
+  width: 100%;
+  height: 50%;
+  background-color: var(--main-website-color);
+  color: white;
+  writing-mode: vertical-lr;
+  border: none;
+  /* box-shadow: 2px 0 10px grey; */
+  transition: background-color 1s ease;
+  z-index: 1;
+  font-size: 12px;
+}
+
+.js3dv-rightbutton-button:hover {
+  background-color: white;
+  color: black;
+}
+
+.js3dv-rightbutton-button:focus {
+  background-color: white;
+  color: black;
+  outline: none;
+}
+
+@media (max-width: 743px) {
+  .js3dv-main-content-container {
+    flex-direction: column-reverse;
+    height: auto;
+    width: 100%;
+  }
+
+  .js3dv-3dvisuals-container {
+    height: 300px;
+  }
+
+  .js3dv-visuals-container {
+    width: 100%;
+    height: auto;
+  }
+
+  .js3dv-buttons-container button {
+    font-size: 16px;
+  }
+}
+/******** 2D views CONTAINER ********/
+
+.js3dv-views-container {
+  position: relative;
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border-top: 1px solid black; */
+  background-color: black;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+}
+
+.js3dv-topview-info-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: white;
+  padding: 3px;
+}
+
+.js3dv-topview-info-text {
+  font-size: smaller;
+  color: black;
+}
+
+@media (max-width: 743px) {
+  .js3dv-views-container {
+    height: 300px;
+  }
+
+  .js3dv-selectDevice-back-button {
+    font-size: 16px;
+    width: 50%;
+    left: calc(50% - 20px);
+    top: 15px;
+    /* right: 20px; */
+    height: 30px;
+  }
+}
+
+/******** FUNCTIONALITY CONTAINER ********/
+
+.js3dv-summary-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 30%;
+  height: 100%;
+  background-color: black;
+  /* box-shadow: 2px 2px 10px grey; */
+  padding: 5px;
+  z-index: 1;
+  color: white;
+  border: 2px solid;
+  justify-content: space-between;
+  overflow: auto;
+}
+
+.js3dv-summary-header {
+  /* font-family: "Montserrat", Courier, monospace; */
+  padding: 5px;
+  font-size: medium;
+  margin: 0;
+  text-align: center;
+}
+
+.js3dv-summary-measurements-container {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  gap: 4px;
+}
+
+.js3dv-summary-snippet-container {
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 2px 2px 10px grey;
+  padding: 4px;
+  transition: background-color 0.5s ease;
+}
+
+/* measurement questions */
+
+.js3dv-options-main-container {
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  /* padding: 5px; */
+  /* overflow: scroll; */
+}
+
+#js3dv-overview-main-container {
+  overflow-y: auto;
+  max-height: 100%;
+}
+
+.js3dv-options-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding: 5px;
+  background-color: var(--secondary-website-color);
+  color: white;
+  border: 1px solid white;
+}
+
+.js3dv-options-container h4 {
+  margin: 0;
+}
+
+.js3dv-options-container * {
+  font-size: 12px;
+}
+
+.js3dv-options-information-container {
+  display: flex;
+  width: 100%;
+  height: auto;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.js3dv-options-label {
+  text-align: start;
+  width: 60%;
+  margin: 0;
+}
+
+.js3dv-options-value-container {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  gap: 2px;
+  align-items: center;
+  justify-content: center;
+}
+
+.js3dv-options-value-container p {
+  margin: 0;
+}
+
+.js3dv-options-value {
+  text-align: end;
+  width: 70%;
+  height: 70%;
+  color: black;
+  border: 1px solid black;
+}
+
+.js3dv-options-input {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 10px;
+  text-align: center;
+  background: var(--main-website-color);
+  /* border-radius: 10px; */
+}
+
+.js3dv-options-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  background: white;
+  width: 20px;
+  height: 10px;
+  /* border-radius: 10px; */
+  cursor: pointer;
+}
+
+.js3dv-options-input::-webkit-range-thumb {
+  background: black;
+  height: 10px;
+  width: 70%;
+  border-radius: 20px;
+}
+
+.js3dv-options-button {
+  width: 100%;
+  height: 30px;
+  margin-top: 1px;
+  background: var(--main-website-color);
+  color: white;
+  border: 1px solid white;
+  outline: none;
+  box-shadow: 2px 2px 10px grey;
+  background-size: 100% 100%;
+  transition: background-color 0.5s ease;
+  font-size: 12px;
+}
+
+.js3dv-options-button:hover {
+  background-size: 400% 100%;
+  background-color: var(--secondary-website-color);
+}
+
+.js3dv-options-handle-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  box-shadow: 2px 2px 10px grey;
+  padding: 10px;
+}
+
+.js3dv-options-handle-canvas {
+  width: auto;
+  height: auto;
+}
+
+.js3dv-options-handle-input {
+  position: absolute;
+  appearance: none;
+  -webkit-appearance: none;
+  width: 180px;
+  height: 25px;
+  text-align: center;
+  border: 1px solid black;
+  background-color: #616161;
+  transform: rotate(90deg);
+  transform-origin: 50% 50%;
+}
+
+.js3dv-options-handle-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  background: white;
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.js3dv-options-handle-input::-webkit-range-thumb {
+  background: black;
+  height: 10px;
+  width: 70%;
+  border-radius: 20px;
+}
+
+.js3dv-options-side-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  position: absolute;
+  height: 20px;
+  outline: none;
+  border: 1px solid white;
+  background: var(--main-website-color);
+  padding: 2px;
+  /* box-shadow: 2px 2px 10px grey; */
+  background-size: 100% 100%;
+  transition: background-color 1s ease;
+}
+
+.js3dv-options-side-button.js3dv-options-top-button {
+  height: 40px;
+  padding: 5px;
+  display: inline-block;
+  word-wrap: break-word;
+  overflow: hidden;
+}
+
+.js3dv-options-side-button:hover {
+  background-size: 400% 100%;
+  background-color: var(--secondary-website-color);
+}
+
+.js3dv-options-side-button:focus {
+  background-size: 400% 100%;
+  background-color: var(--secondary-website-color);
+}
+
+.js3dv-options-handle-buttons-container {
+  display: flex;
+  width: 100%;
+  gap: 5px;
+}
+
+.js3dv-options-handlepos-input {
+  width: 60px;
+  height: 20px;
+}
+
+/* radius buttons */
+
+.js3dv-options-radius-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding: 5px;
+  background-color: var(--secondary-website-color);
+  border: 1px solid white;
+}
+
+.js3dv-options-radius-button {
+  display: flex;
+  width: 50%;
+  height: 25px;
+  background: var(--main-website-color);
+  background-size: 100% 100%;
+  border: 1px solid white;
+  outline: none;
+  padding: 5px;
+  /* box-shadow: 2px 2px 10px grey; */
+  transition: background-color 1s ease;
+}
+
+.js3dv-options-radius-button * {
+  font-size: 12px;
+}
+
+.js3dv-options-radius-button:hover {
+  background-size: 400% 100%;
+  background-color: var(--secondary-website-color);
+}
+
+.js3dv-options-radius-button-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  gap: 10px;
+}
+.js3dv-options-radius-button-container p {
+  margin: 0;
+  color: white;
+}
+
+.js3dv-options-radius-button-image {
+  height: 100%;
+}
+
+/* Object name input */
+
+.js3dv-options-input-objectName-container {
+  width: 40%;
+}
+
+.js3dv-options-objectName-text {
+  width: 100%;
+  color: black;
+  outline: none;
+  padding: 5px;
+}
+
+/* reinforcement question */
+
+.js3dv-options-reinforcement-buttons-container {
+  display: flex;
+  width: 0%;
+  gap: 2px;
+}
+
+.js3dv-options-reinforcement-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 25px;
+  background: var(--secondary-website-color);
+  border: 1px solid white;
+  outline: none;
+  padding: 5px;
+  font-size: 12px;
+  transition: background-color 1s ease;
+}
+
+.js3dv-options-reinforcement-select {
+  width: 40%;
+  height: 25px;
+  color: white;
+  outline: none;
+  border-radius: 0;
+  border: 1px solid white;
+  background-color: var(--secondary-website-color);
+  font-size: 12px;
+  transition: background-color 1s ease;
+}
+
+.js3dv-options-reinforcement-select-option {
+  color: white;
+  border-radius: 0;
+}
+
+.js3dv-options-reinforcement-select:hover {
+  background-color: var(--main-website-color);
+  color: white;
+}
+
+.js3dv-options-reinforcement-select:focus {
+  background-color: var(--main-website-color);
+  color: white;
+}
+
+.js3dv-options-panel-buttons-container {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.js3dv-options-panel-button {
+  color: white;
+  background-color: var(--main-website-color);
+  width: 50%;
+  height: 25px;
+  border: 1px solid white;
+  transition: background-color 1s ease;
+}
+
+@media (max-width: 743px) {
+  .js3dv-summary-container {
+    width: 100%;
+    height: auto;
+    border: none;
+  }
+
+  .js3dv-options-container p {
+    font-size: 16px;
+  }
+
+  .js3dv-options-container span {
+    font-size: 16px;
+  }
+
+  .js3dv-options-container h6 {
+    font-size: 16px;
+  }
+
+  .js3dv-options-button {
+    font-size: 16px;
+  }
+
+  .js3dv-options-radius-button {
+    height: 40px;
+  }
+
+  .js3dv-options-radius-container p {
+    font-size: 16px;
+  }
+
+  .js3dv-options-radius-container img {
+    width: 25px;
+  }
+
+  .js3dv-options-value-container input {
+    padding: 5px;
+    font-size: 16px;
+  }
+
+  .js3dv-options-value-container p {
+    font-size: 16px;
+  }
+
+  .js3dv-options-input {
+    display: none;
+  }
+
+  .js3dv-options-reinforcement-select {
+    font-size: 16px;
+  }
+
+  .js3dv-options-reinforcement-buttons-container button {
+    font-size: 16px;
+  }
+
+  .js3dv-options-objectName-text {
+    font-size: 16px;
+  }
+
+  .js3dv-options-panel-button {
+    font-size: 16px;
+  }
+}
+
+/************ OVERVIEW ***********/
+
+.js3dv-options-overview-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 30%;
+  height: 100%;
+  background-color: black;
+  /* box-shadow: 2px 2px 10px grey; */
+  padding: 5px;
+  z-index: 1;
+  color: white;
+  border: 2px solid;
+}
+
+.js3dv-overview-element-main-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  background-color: var(--secondary-website-color);
+  gap: 5px;
+  transition: background-color 1s ease;
+  border: 1px solid white;
+}
+
+.js3dv-overview-element-main-container p {
+  font-size: 12px;
+}
+
+.js3dv-overview-element-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.js3dv-options-overview-button {
+  position: absolute;
+  color: black;
+  right: 10px;
+  top: 10px;
+  width: 25px;
+  height: 25px;
+  z-index: 1000;
+  border: 1px solid black;
+  background-color: white;
+  outline: none;
+  transition: all 1s ease;
+}
+
+.js3dv-options-overview-button:hover {
+  background-color: black;
+  color: white;
+}
+
+.js3dv-options-overview-handle-information {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.js3dv-options-overview-remove-button {
+  width: 30px;
+  height: 30px;
+  outline: none;
+  border: 1px solid black;
+  background-color: white;
+  transition: all 1s ease;
+  color: black;
+}
+
+.js3dv-options-overview-remove-button:hover {
+  background-color: black;
+  color: white;
+}
+
+/* Amount button */
+.js3dv-options-amount-container {
+  display: flex;
+  width: 90px;
+  height: 30px;
+  /* box-shadow: 2px 2px 10px grey; */
+  margin: 5px;
+}
+
+.js3dv-options-amount-container p {
+  font-size: 12px;
+}
+
+.js3dv-options-amount-button {
+  width: 30px;
+  height: 30px;
+  border: none;
+  outline: none;
+  background-color: white;
+  color: black;
+  /* color: white; */
+  transition: all 1s ease;
+}
+
+.js3dv-options-amount-button:hover {
+  background-color: var(--secondary-website-color);
+  color: white;
+}
+
+.js3dv-options-amount-display {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 30px;
+  color: white;
+  background-color: var(--secondary-website-color);
+}
+
+/* checkout container */
+.js3dv-options-checkout-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-top: 1px solid black;
+  gap: 5px;
+}
+
+.js3dv-options-checkout-button {
+  width: 100%;
+  height: 30px;
+  border: 1px solid white;
+  outline: none;
+  background: var(--main-website-color);
+  background-size: 100% 100%;
+  color: white;
+  box-shadow: 2px 2px 10px grey;
+  transition: background-color 1s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.js3dv-options-checkout-button:hover {
+  background-size: 400% 100%;
+  background-color: var(--secondary-website-color);
+}
+
+.js3dv-summary-totalprice-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.js3dv-summary-totalprice-container h2 {
+  font-size: 12px;
+  letter-spacing: normal;
+}
+
+@media (max-width: 743px) {
+  .js3dv-options-overview-container {
+    width: 100%;
+    border: none;
+    padding-bottom: 30px;
+    border-bottom: 1px solid white;
+    font-size: 20px;
+  }
+
+  .js3dv-options-overview-container p {
+    font-size: 16px;
+  }
+
+  .js3dv-options-checkout-button {
+    height: 3em;
+    font-size: 16px;
+  }
+
+  .js3dv-summary-totalprice-container h2 {
+    font-size: 20px;
+  }
+
+  .js3dv-options-amount-container p {
+    font-size: 16px;
+  }
+}
+
+/*********** FINAL CHECK ELEMENTS ***********/
+
+.js3dv-final-check-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  gap: 20px;
+}
+
+.js3dv-final-check-views-container {
+  width: 40%;
+  height: 100%;
+  border: 1px solid black;
+  background-color: black;
+}
+
+.js3dv-final-check-topview-container {
+  position: relative;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.js3dv-final-check-topview-container canvas {
+  width: 80%;
+}
+
+.js3dv-final-check-frontview-container {
+  position: relative;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.js3dv-final-check-frontview-container canvas {
+  width: 80%;
+}
+
+.js3dv-final-check-view-header {
+  width: 100%;
+  padding: 10px;
+  height: 20px;
+  background-color: white;
+  color: black;
+  text-align: center;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: auto;
+}
+
+.js3dv-final-check-info-container {
+  width: 60%;
+  height: 100%;
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  gap: 10%;
+  padding: 20px;
+}
+
+.js3dv-final-check-info-header {
+  width: 100%;
+  text-align: center;
+  color: black;
+  height: 6vh;
+  font-size: medium;
+}
+
+.js3dv-final-check-info-elements-container {
+  width: 90%;
+  height: 90%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  overflow: auto;
+}
+
+.js3dv-final-check-info-element-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  background-color: var(--main-website-color);
+  border: 1px solid black;
+}
+
+.js3dv-final-check-info-element-container p {
+  font-size: 12px;
+}
+
+.js3dv-final-check-info-buttons-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 10%;
+  width: 90%;
+  gap: 5px;
+}
+
+.js3dv-final-check-info-handle-element-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-color: var(--main-website-color);
+  gap: 5px;
+  transition: background-color 1s ease;
+  border: 1px solid black;
+}
+
+.js3dv-final-check-info-handle-element-container p {
+  font-size: 12px;
+}
+
+.js3dv-final-check-info-handle-information {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.js3dv-final-check-quantity-value {
+  width: 50px;
+  height: 100%;
+  outline: none;
+  color: black;
+  text-align: center;
+  transition: color 1s ease, background-color 1s ease;
+}
+
+.js3dv-final-check-quantity-value option {
+  color: black;
+}
+
+/* loading animation */
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 20px;
+  padding: 2px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: white;
+  --_m: conic-gradient(#0000 10%, #000), linear-gradient(#000 0 0) content-box;
+  -webkit-mask: var(--_m);
+  mask: var(--_m);
+  -webkit-mask-composite: source-out;
+  mask-composite: subtract;
+  animation: l3 1s infinite linear;
+}
+@keyframes l3 {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+@media (max-width: 743px) {
+  .js3dv-final-check-container {
+    flex-direction: column;
+  }
+
+  .js3dv-final-check-views-container {
+    width: 100%;
+  }
+
+  .js3dv-final-check-info-container {
+    width: 100%;
+  }
+
+  .js3dv-final-check-topview-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .js3dv-final-check-frontview-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .js3dv-final-check-info-elements-container {
+    width: 100%;
+  }
+
+  .js3dv-final-check-info-buttons-container {
+    width: 100%;
+  }
+
+  .js3dv-final-check-info-element-container p {
+    font-size: 16px;
+  }
+
+  .js3dv-final-check-view-header {
+    font-size: 16px;
+  }
+
+  .js3dv-final-check-info-handle-element-container p {
+    font-size: 16px;
+  }
+}
+
+/********* EXTRA BUTTONS CONTAINER ********/
+
+.js3dv-extra-buttons-container {
+  width: 100%;
+  background-color: black;
+  height: 500px;
+}
+
+.js3dv-extra-buttons-container * {
+  color: white;
+}
+
+@media (max-width: 743px) {
+  .js3dv-extra-buttons-container {
+    width: auto;
+    background-color: black;
+    height: auto;
+  }
+}
+
+/******** MOBILE SPECIFIC STYLING  ********/
+
+.js3dv-summary-mobile-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  height: 40px;
+  padding: 0px 10px;
+}
